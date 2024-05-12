@@ -1,0 +1,14 @@
+Security Groups
+---------------
+public or users directly connected to frontend application.
+frontend apps --> port no is 80
+backend apps --> port no is 8080
+
+I selected frontend SG in USER SG
+
+telnet <destination-IP> port
+telnet 3.208.3.54 8080
+
+
+
+

@@ -1,0 +1,101 @@
+Roboshop Configure
+------------------
+1. web/frontend tier
+2. App/Api/Backend tier
+3. DB tier
+
+DB apps are called statefull
+App/Web apps are called stateless
+
+CRUD over database
+------------------
+create user
+read user
+update user
+delete user
+
+nginx is used as reverse proxy
+
+RHEL = Fedora = Centos = AWS Linux
+
+Centos
+
+devops-practice based on centos-8
+username: centos
+passwd: DevOps321
+
+web:
+----
+http = web server
+nginx = 80
+
+dnf vs yum
+----------
+yum is the default package upto centos 7.
+for centos 8/9 dnf is the default package manager.
+
+yum consumes more memory than dnf
+
+forward proxy vs reverse proxy:(***)
+-------------------------------
+VPN --> virtual private network
+
+servers are not aware of clients behind VPN
+VPN can be used for anonymous access ie hiding our identity
+in forward proxy servers dont know who the real clients are
+
+security --> companies can impose restrictions not to use particular sites,file uploads, to monitor user behaviour
+
+clients are aware of proxy,servers are not aware
+
+reverse proxy
+--------------
+in reverse proxy clients are not aware of server side
+applications uses reverse proxy to secure their code.
+
+http://54.197.5.96/api/catalogue/categories --> quering catlogue to know the product categories.
+
+Http Status
+-----------
+2** --> success
+3** --> redirect/temp --> images, gifs are redirected
+
+failure responses
+------------------
+400,404,403,402
+4** --> client side errors
+5** --> servers side errors --> purely project error
+
+MongoDB
+-------
+forward proxy vs reverse proxy
+
+caching
+------
+Airtel --> 1000 users
+1 user downloaded bahubali movie --> movie from US
+cache server --> bahubali movie
+
+2nd user get from cache server --> more speed
+
+MongoDB
+------
+-> Developer has choosen the database MangoDB
+-> Hence we are trying to install it and configure it as a devops engineer
+-> Note: Versions of the DB software we will get context from the developer,meaning we need to check with the developer,developer shared the version information as MongoDB-4.x
+
+127.0.0.1 --> this means this IP belongs to localhost
+
+Catalogue
+---------
+catalogue is a microservice that is responsible for serving the list of products that displaysin roboshop application
+Developer has choosen Nodejs,check with developer which version of Nodejs is needed.developer has set the context that it can work with Nodejs>18
+Install Nodejs,By default Nodejs 10 is available,we would like to enable 18 version and install list.
+
+
+
+
+
+
+
+

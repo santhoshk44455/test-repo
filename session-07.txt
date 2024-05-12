@@ -1,0 +1,53 @@
+DNS
+----
+DNS stands for Domain Name System
+when we type facebook.com in the browser first it will check in the browser cache for the IP address.
+if the IP address is not in the browser cache,it will connect to the OS for the IP address for facebook.com.
+it will check in the OS cache also for the IP address for facebook.com
+ISP resolver --> DNS resolution is a responsibility of ISP
+if it is not there in the OS cache the OS will connect to the ISP resolver for the IP address of facebook.com
+ISP resolver will check in the ISPresolver cache for the facebook.com IP address.
+ISP resolver is configured with root servers.
+few organizations voluntarily formed root servers
+root servers --> 13 servers are there across worldwide and they are backed by many servers for load balancing.
+ISP will now contact the root servers,these root servers have TLD information i.e(Top Level domain) information.
+
+.com --> popular
+.in --> Indian gov will manage, .uk, .us,.au,.eu
+.org --> non profit organizations
+.net
+.gov
+.online
+.ai
+
+Root servers --> TLD info is provided to ISP resolver
+ISP resolver --> .com TLD
+.com TLD --> nameservers information
+
+Domain Registars
+---------------
+godadddy
+hostinger
+AWS
+
+hostinger --> devopsuniverse.online
+
+.online --> TLD 
+
+hostinger responsibility is to update,santhosh kumar with details bought devopsuniverse.online and the nameservers are
+
+ns1.dns-parking.com
+ns2.dns-parking.com
+
+we are using AWS cloud,we need some records ---------------------------------------------automatically created
+----------------------
+we need to do nameservers transformation
+
+created hostedzone in AWS. we got name servers.
+
+we need to update namesevers in hostinger.
+
+hostinger responsibilty is to update NS with .online TLD
+
+Browser --> cache --> OS --> cache --> ISP --> cache --> Root servers --> TLD --> Name severs --> A record
+

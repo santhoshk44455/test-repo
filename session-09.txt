@@ -1,0 +1,34 @@
+what is Deployment(manual deployment)
+------------------
+if we want to dosome changes developer will update the code.he will push the code to some location as zip file.
+-> download the new code
+-> stop the server --> stop catalogue
+-> remove old code
+-> unzip new code
+-> restart the server
+in this we have downtime 
+
+syncronous vs asyncronous
+--------------------------
+http/https --> syncronous
+in syncronous communication server should be always up and running
+if the server is not running then we are getting 400 or 500 errors
+
+asyncronous
+-----------
+client --> messaging broker --> server
+
+sivakumar --> ramesh
+
+there will be a queue for ramesh
+
+sivakumar --> ramesh queue
+
+ramesh whatsap --> subsribed to ramesh queue
+
+ifonline --> message will be delivered
+
+when ramesh gets online --> ramesh whatsp --> ramesh queue
+
+
+

@@ -1,0 +1,77 @@
+Network Management
+------------------
+netstat --> network statistics
+
+netstat -lntp --> this command is used to check whether the ports are running or not
+l -> listing
+n -> port number
+t -> tcp protocol
+p -> process
+
+sudo netstat -lntp -> this will gives the process id also.
+
+troubleshooting:
+-----------------
+system resources
+  CPU memory -> by using top command we can check the cpu usage
+  HD full -> df -ht commnd
+  RAM full -> free --help or free -m
+after this we have to check whether the process is running or not --> ps -ef | grep nginx
+after that we have to check whether the port is opened or not --> netstat -lntp
+then we have to check for whether the service is running or not by using below command
+systemctl status <service>
+then we have to check for whether the firewall is opened or not
+
+how to give access to linux user
+-------------------------------
+There are 2 types of users
+1. Linux Admin --> full access to linux
+2. Devops Admin --> limited sudo access
+first we need to create the group for admin and devops team by using the following command
+groupadd admin
+groupadd devops
+
+ramesh --> he is the admin person
+suresh --> he is the devops person
+
+First we need to create the user ramesh
+useradd ramesh
+usermod -g admin ramesh --> by using this command we are adding the ramesh user to the admin group
+
+useradd suresh
+usermod -g devops suresh --> by using this cmd we are adding the suresh to the devops group
+
+how to give access to the above 2 persons?
+vim /etc/sudoers or
+vi sudo --> this will open the file in safemode
+we are going to add the ramesh to wheel group or give admin group full access
+%admin  ALL=(ALL)  ALL
+
+[root@IP]# vim /etc/ssh/sshd_config
+in this file we need to enable the password authentication,afterwards restart the sshd service
+[root@IP]# systemctl restart sshd
+
+ssh ramesh@IPAddress --> now connected
+
+[ramesh@IP]$ sudo yum install git -y
+
+now we need to give the limited sudo access to the devops person
+[root@IP]# vi sudo
+%devops  ALL=(ALL)  /usr/bin/yum,/usr/bin/systemctl
+now the devops group user has only yum and systemctl rights
+
+instead of directly opning the sudoers file,we will create sudoers.d file
+[root@IP]# vim /etc/sudoers.d/devops
+in this file we will give the access
+%devops  ALL(ALL)    /usr/bin/yum,/usr/bin/systemctl
+
+3 tier architecture
+-------------------
+
+
+
+
+
+
+
+

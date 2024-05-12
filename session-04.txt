@@ -1,0 +1,68 @@
+Putty
+-----
+username
+private-key/password
+IP address
+in background it will issue the below command
+
+ssh -i private-key/password username@IP
+.pem --> general format
+.ppk --> putty private key
+
+super putty --> it is an extension to putty
+
+front-end servers = http servers = 80
+hosts html/js based applications
+
+back-end servers = http = 8080
+tomcat, jboss, etc
+java, .Net, python
+
+Linux file system structure
+---------------------------
+/  --> root folder for lnux server
+
+boot --> when server is getting strated, server refers this directory and config from grub.cfg
+dev --> devices --> external devices are mounted here
+etc --> extra configaration
+home --> users home directory are created here
+lib/lib64 --> system needs libraries are presnt here
+/media --> cd/dvd drive
+/mnt --> extra disks mount here
+/opt --> optional,manual installation of services or applications will be downloaded here
+/poc --> running process will store here with their PID
+/proc/cpuinfo
+/proc/meminfo
+
+/root --> root user home folder
+/run --> when server starts,server uses this directory as storage
+/bin --> cat,vim,touch,cd
+/sbin --> system commands like root access commands
+/temp --> temporary files not important
+/usr --> all users,
+/var --> variables --> log files
+
+symlink vs hardlink (imp interview question)
+-------------------------------------------
+symlink:
+  first create a file using touch command'
+touch hello
+ln -s /home/ec2-user/hello /tmp/hello-soft
+here s stands for symlink
+symlink will have the different inode location
+
+hardlink:
+hardlink wil have the same inode location as the actual file inode location
+ln /home/ec2-user/hello hello-hard
+
+symlink will point out the file,if we delete that file it will not be there
+hardlink will be good,we can get the content from hello-hard location
+
+cat hello-hard
+hello world
+cat hello-soft
+no such file or directory
+
+
+
+

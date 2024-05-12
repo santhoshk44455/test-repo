@@ -1,0 +1,127 @@
+ls--> This command lists all the directories
+/home/ec2-user
+cd --> change directory
+/ --> root directory
+ls -l --> lengthy format in alphabetical order--> By using this command we are getting the full information
+drwxr-xr-x 
+d --> it means directory
+- --> it means file
+cd .. --> one step back
+ls -lr --> reverse alphabetical order
+ls -lt --> latest files are on the top
+ls -ltr --> old files are on the top
+ls -la --> list all files and folders including hidden
+
+CRUD
+----
+C --> create
+R --> read
+U --> update
+D --> delete
+
+touch --> this commnd creates an empty file
+mkdir --> this commnd is used to create the directory or folder
+
+update file with content:
+------------------------
+cat > <file-name> --> file will open
+enter the content
+enter and ctrl+d
+> -> replaces the content
+>> -> appends the content
+
+reading file:
+------------
+cat <file-name>
+
+remove file and folder:
+----------------------
+rm <file-name>
+rm <folder-name> ---> this command removes the empty folder
+rm -r devops --> r means recusrsive --> go inside every folder and deletes everything
+
+copy
+----
+cp <source> <destination>
+cp -r --> recursive
+
+cut
+----
+mv -->move
+within the same folder if we use mv command it works as rename
+mv santhosh santhosh-1---> this will rename the file from santhosh to santhosh-1
+
+grep
+----
+grep <word to find> <file-name>
+grep bin passwd
+
+Linux is bydefault case-sensitive
+devops and DEVOPS both are different
+
+|--> piping one command output will become input to another command
+
+wget vs curl
+-----------
+wget ---> download files
+curl ---> downloads the content directly on to a terminal
+
+cut and awk
+-----------
+https://github.com.daws-76/notes/blob/master/session-01.txt
+
+delimeter -->
+:
+/
+---
+https:
+
+github.com
+daws-76s
+
+cut -d / -f 1
+
+awk
+---
+awk -F / '{print $1F}'
+awk -F / '{print $NF}' --> last fragment
+
+awk command is used to divide the data based on coloumns.
+
+head and tail
+------------
+head <file-name> --> first 10 lines
+tail <file-name> --> last 10 lines
+
+colon/command mode
+-----------------
+:/<word-to-search> --> search from top
+:?<word to search> --> search from bottom
+
+sudo cp /etc/ssh/sshd_config sshd_config
+sudo chown ec2-user:ec2-user sshd-config
+
+replace the content/word
+------------------------
+:s/<word-to-find>/<word-to-replace>
+replaces the word where our cursor is,this will replace only first occurence in that line
+
+:2s/<word-to-find>/<word-to-replace>
+:%s/<word-to-find>/<word-to-replace>/g --> all occurences
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

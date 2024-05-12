@@ -1,0 +1,171 @@
+permissions
+-----------
+- rw-    rw-    r--
+  user  group  others
+  u     g      o
+R -> 4
+W -> 2
+X -> 1 -> to run commnds and shell scripts
+santhoshkumar --> Devops Team
+user=owner
+group=devops
+ohers=testing,development team
+
+in Linux when we create user, a group with same name will be created
+santhoshkumar --> user santhsohkumar and group with name santhoshkumar also created
+
+in order to change the permissions we will use the chmod command
+
+chmod u+x sample --> this means we are giving the execution permission for the user
+
+chmod ugo+r sample
+
+sample
+
+u --> RWX
+g --> R
+o --> 0
+chmod 740 example.txt
+
+
+--> the user get read,write and execution permissions
+--> the group get only read permissions
+--> others will not get any permission
+
+u --> RWX
+q --> RX
+o --> X
+chmod 751 example.txt
+
+--> the user get read,write and execute permissions
+--> thr group get read,write permissions
+--> others will get execute permission
+
+User Management:
+---------------
+suppose if santhosh is the new person who joined the devops team
+1. create user
+useradd <user-name>
+passwd <user-name>
+
+/etc/passwd --> will have user entries
+when the user is created, automaticaly group is created with same username
+
+getent groups --> this commnd will gives us the all the group entries
+now the user has to login,then we need to do the small configaration
+vim /etc/ssh/sshd_config
+in this configaration file generally linux will disable the password authentication,now we have to enable it manually,afterwards run a small command
+/etc/ssh/sshd_config --> enable passwd authentication
+sshd -t --> checks for syntax of the file
+systemctl restart sshd
+
+ssh santhoshkumar@ipaddress
+password: santhoshkumar
+
+now we have successfully logged in as the santhoshkumar user.
+if we type pwd --> /home/santhoshkumar
+
+2. group
+groupadd <group-name> --> command to add new group
+groupadd devops
+
+3.every user will have a primary group and secondary group
+santhoshkumar should be added to devops group
+
+usermod -g devops santhoshkumar
+
+chown --> even file owner cant run this commands
+only sudo user can change the ownership
+chown <user>:<group> filename
+chown <user>:<group> -R folder
+4. we will create testing group,we will give santhoshkumar secondary access.
+groupadd testing
+
+usermod -aG testing santhoshkumar
+
+gpasswd -d santhoshkumar testing --> deletes santhoshkumar from testing group
+
+user is leaving organization
+----------------------------
+userdel <user-name> ---> removes user from linux
+
+first user should be removed from the group
+
+process management
+-------------------
+if we follow the process we will get best results
+
+everything in linux is a process
+
+Team Leader
+Team Manager
+Account Manager
+Senior Engineer
+Junior Engineer
+Trainee
+
+Team Leader --> 1 ticket created about devops pipelines setup = 1
+senior engineer --> 1
+sub task -> 2 --> Junior Engineer
+sub task -> 3 --> Junior Engineer-2
+Junior Engineer
+---------------
+sub task --> 4 --> trainee
+create a CI pipeline --> task completed
+ticket 4 --> task completed
+
+task ID --> 4 , parent task --> 3
+task 3 --> task 1
+
+whatever we do in linux --> a process id will be created and reported back
+
+package management
+------------------
+yum command is used to install packages --> RHEL =centos = fedora = AWS Linux2
+amazon-linux-extras
+yum install package-name
+yum remove git -y
+
+suppose raheem joined,how can we enable ssh access
+--------------------------------------------------through private key
+-------------------
+step 1: create raheem user
+useradd raheem
+step 2: we will send a mail to raheem..give me your public key,keep your private key securely
+[root]# useradd raheem
+[root]# cd/home/raheem
+[root]# mkdir .ssh
+after creating the .ssh folder,now raheem has to generate the key
+[user]$ ssh-keygen -f raheem
+[user]$ raheem.pub 
+now he will give this public key
+
+700
+user --> RWX
+group
+others
+[root@IP raheem]# chmod -R 700 .ssh
+[root@IP raheem]# cd .ssh/
+[root@IP .ssh]# vim authorized_keys
+now in this file we have to paste the raheems public key here
+[root@IP .ssh]# chmod 400 authorized_keys
+[root@IP raheem]# chown -R raheem:raheem .ssh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

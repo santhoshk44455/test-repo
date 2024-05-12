@@ -1,0 +1,78 @@
+Project Configaration (Manaual Process)
+----------------------
+create a server
+installed programmng lanaguage
+download code/application
+created directories/users
+installed dependencies
+start application
+
+deployment/release
+------------------
+developer will push the new app/code
+stop the server
+remove/backup the old code
+download new code
+start the server
+
+Manual Process (disadvantages)
+------------------------------
+downtime
+time consuming --> 30 min
+manaual mistakes
+troubleshooting
+whos did the mistakes
+repeated work
+
+coding --> learn scripting
+--------------------------
+programming --> java, .net, python
+scripting --> shell, python, ansible,terraform,kubernetes etc.
+
+coding --> patterns and methods
+
+variables
+data types
+conditions
+functions
+loops
+
+install git through scripting
+-----------------------------
+1. check whether the user have sudo access or not
+2. if not sudo, we will throw error
+3. if user is the sudo user,then proceed
+4. install pacakage git
+5. we need to check explicitly installed or not
+6. if error installation throw the error to user,otherwise say success
+
+shell scripting
+----------------
+where to keep the scripts???
+
+10 devops engineers
+-------------------
+one central location to do and share the things
+
+GIT --> global information tracking system
+
+version control --> 10 days
+
+after 10 days --> i wanted to see what was script at 2nd day..
+
+we should always go back tothe previous version if something goes wrong
+
+track the changes --> through git we can understand who didthe changes and why
+
+review the changes --> our team members should review
+
+backup and security
+
+branching --> create a branch from master do the chnages if evreything is good then proceed
+
+collabaration
+
+
+
+
+
